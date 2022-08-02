@@ -1,15 +1,10 @@
-﻿using System;
-using UnityEngine;
-using UnityEngine.PlayerLoop;
-
-namespace Singleton
+﻿namespace Singleton
 {
     public class ExampleSingleton : Singleton<ExampleSingleton>
     {
-        private void Start()
+        public void execute()
         {
-            Debug.Log("My name is " + Instance.name);
-            Debug.Log("I am here " + Exists());
+            Instance.Exists();
         }
     }
 }
