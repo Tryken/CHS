@@ -1,4 +1,4 @@
-﻿namespace Singleton
+﻿namespace Core.Singletons.Examples
 {
     public class ExampleSingleton : Singleton<ExampleSingleton>
     {

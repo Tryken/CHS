@@ -1,6 +1,6 @@
 ﻿using MoonSharp.Interpreter.Interop;
 
-namespace Singleton
+namespace Core.Singletons
 {
     public abstract class Singleton <T>  where T : Singleton<T>, new()
     {
@@ -13,6 +13,12 @@ namespace Singleton
         public bool Exists()
         {
             return (_mInstance != null);
+        }
+
+        [MoonSharpVisible(false)]
+        public void Recreate()
+        {
+            _mInstance = new T();
         }
     }
 }
