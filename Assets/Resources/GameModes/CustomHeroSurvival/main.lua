@@ -1,24 +1,24 @@
 function onInitGame()
     print("onInitGame")
 end
-GameManager.onInitGame.add(onInitGame);
+GameManagerAPI.onInitGame.add(onInitGame);
 
 function onStartGame()
     print("onStartGame")
 end
-GameManager.onStartGame.add(onStartGame);
+GameManagerAPI.onStartGame.add(onStartGame);
 
 function onRunGame()
     print("onRunGame")
 end
-GameManager.onRunGame.add(onRunGame); 
+GameManagerAPI.onRunGame.add(onRunGame); 
 
 function onStopGame()
     print("onStopGame")
 end
-GameManager.onStopGame.add(onStopGame);
+GameManagerAPI.onStopGame.add(onStopGame);
 
 function onCloseGame()
     print("GAYBAR")
 end
-GameManager.onCloseGame.add(onCloseGame);
+GameManagerAPI.onCloseGame.add(onCloseGame);

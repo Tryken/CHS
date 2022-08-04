@@ -45,7 +45,7 @@ namespace Core.GameModes
         {
             UserData.RegisterType<EventArgs>();
             UserData.RegisterType<GameManagerAPI>();
-            script.Globals["GameManager"] = GameManagerAPI.Instance;
+            script.Globals["GameManagerAPI"] = GameManagerAPI.Instance;
         }
     }
 }
