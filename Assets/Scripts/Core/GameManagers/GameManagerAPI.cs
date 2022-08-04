@@ -2,7 +2,6 @@
 
 using Core.Singletons;
 using MoonSharp.Interpreter;
-using MoonSharp.Interpreter.Interop;
 
 namespace Core.GameManagers
 {
@@ -15,37 +14,37 @@ namespace Core.GameManagers
 		public event EventHandler OnStopGame;
 		public event EventHandler OnCloseGame;
 		
-		[MoonSharpVisible(false)]
+		[MoonSharpHidden]
 		public void RaiseOnInitGame()
 		{
 			OnInitGame?.Invoke(this, EventArgs.Empty);
 		}
 		
-		[MoonSharpVisible(false)]
+		[MoonSharpHidden]
 		public void RaiseOnStartGame()
 		{
 			OnStartGame?.Invoke(this, EventArgs.Empty);
 		}
 		
-		[MoonSharpVisible(false)]
+		[MoonSharpHidden]
 		public void RaiseOnRunGame()
 		{
 			OnRunGame?.Invoke(this, EventArgs.Empty);
 		}
 		
-		[MoonSharpVisible(false)]
+		[MoonSharpHidden]
 		public void RaiseOnStopGame()
 		{
 			OnStopGame?.Invoke(this, EventArgs.Empty);
 		}
 		
-		[MoonSharpVisible(false)]
+		[MoonSharpHidden]
 		public void RaiseOnCloseGame()
 		{
 			OnCloseGame?.Invoke(this, EventArgs.Empty);
 		}
 
-		[MoonSharpVisible(false)]
+		[MoonSharpHidden]
 		public void Clear()
 		{
 			Recreate();
