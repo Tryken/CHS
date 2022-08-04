@@ -1,9 +1,12 @@
 ﻿using System;
-using MoonSharp.Interpreter.Interop;
+
 using Core.Singletons;
+using MoonSharp.Interpreter;
+using MoonSharp.Interpreter.Interop;
 
 namespace Core.GameManagers
 {
+	[MoonSharpUserData]
 	public class GameManagerAPI : Singleton<GameManagerAPI> 
 	{
 		public event EventHandler OnInitGame;
