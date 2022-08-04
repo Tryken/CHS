@@ -4,7 +4,7 @@ using Events;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class OnClickButtonGenericsEvent : MonoBehaviour
+public class OnClickButtonEvent : MonoBehaviour
 {
     [field: SerializeField] private GameEvent gameEvent;
 
