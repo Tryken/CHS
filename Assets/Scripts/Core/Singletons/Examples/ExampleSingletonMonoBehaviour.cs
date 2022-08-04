@@ -1,8 +1,6 @@
-﻿using System;
-using UnityEngine;
-using UnityEngine.PlayerLoop;
+﻿using UnityEngine;
 
-namespace Singleton
+namespace Core.Singletons.Examples
 {
     public class ExampleSingletonMonoBehaviour : SingletonMonoBehaviour<ExampleSingletonMonoBehaviour>
     {

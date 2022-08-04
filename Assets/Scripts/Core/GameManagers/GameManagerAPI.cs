@@ -1,8 +1,8 @@
 ﻿using System;
 using MoonSharp.Interpreter.Interop;
-using Singleton;
+using Core.Singletons;
 
-namespace GameManager
+namespace Core.GameManagers
 {
 	public class GameManagerAPI : Singleton<GameManagerAPI> 
 	{
@@ -40,6 +40,12 @@ namespace GameManager
 		public void RaiseOnCloseGame()
 		{
 			OnCloseGame?.Invoke(this, EventArgs.Empty);
+		}
+
+		[MoonSharpVisible(false)]
+		public void Clear()
+		{
+			Recreate();
 		}
 	}
 }
