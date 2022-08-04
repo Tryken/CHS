@@ -30,7 +30,9 @@ namespace Core.GameModes
             {
                 string shortened_type_name = t.Name;
                 if (t.Name.Contains("LuaProxy"))
+                {
                     shortened_type_name = shortened_type_name.Remove(t.Name.Length - 8, 8);
+                }
 
                 /* Global object */
                 final_lua_file_str += shortened_type_name + "={};\n";
@@ -39,12 +41,22 @@ namespace Core.GameModes
                 MethodInfo[] methods = t.GetMethods();
                 foreach(MethodInfo m in methods)
                 {
+                    if (m.GetCustomAttributes(typeof(MoonSharpHiddenAttribute), false).Length > 0)
+                        continue;
+
                     if (!m.IsPublic)
                         continue;
                     if (m.DeclaringType != t)
                         continue;
 
-                    final_lua_file_str += shortened_type_name + "." + m.Name + "=function(";
+                    var methodName = m.Name;
+                    if (methodName.Contains("_"))
+                    {
+                        var methodNameSplit = methodName.Split("_");
+                        methodName = $@"{methodNameSplit[1]}.{methodNameSplit[0]}";
+                    }
+                    
+                    final_lua_file_str += shortened_type_name + "." + methodName + "=function(";
 
                     /* Get parameters */
                     int length = m.GetParameters().Length;
