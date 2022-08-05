@@ -1,10 +1,8 @@
-using System;
-using Core.Network.ScriptableObjects;
 using UnityEngine;
 
 namespace Core.Networks.ScriptableObjects
 {
-    [CreateAssetMenu(menuName = "Manager/MasterManager")]
+    [CreateAssetMenu(menuName = "Network/MasterManager")]
     public class MasterManager : ScriptableObject
     {
         public static GameSettings GameSettings
