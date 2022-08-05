@@ -1,23 +1,32 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Presentation
 {
     public class Lobby : MonoBehaviour
     {
-        [field: SerializeField] private RectTransform lobbyMenu;
+        [field: SerializeField] private RectTransform LobbyMenu { get; set; }
 
-        private GameObject _mainMenu;
-        
+        private GameObject MainMenu { get; set; }
+
         private void Start()
         {
-            _mainMenu = GameObject.FindWithTag("MainScreen");
+            MainMenu = GameObject.FindWithTag("MainScreen");
+        }
+        
+        private void Update()
+        {
+            if (!Keyboard.current.escapeKey.isPressed)
+                return;
+            
+            MainMenu.transform.gameObject.SetActive(true);
+            LobbyMenu.transform.gameObject.SetActive(false);
         }
 
         public void OpenLobby()
         {
-            _mainMenu.transform.gameObject.SetActive(false);
-            lobbyMenu.transform.gameObject.SetActive(true);
+            MainMenu.transform.gameObject.SetActive(false);
+            LobbyMenu.transform.gameObject.SetActive(true);
         }
     }
 }
