@@ -154,4 +154,5 @@ fabric.properties
 
 .idea
 
-/Assets/Ressources/GameModes/_bindings_autogen.lua
+Assets/Resources/GameModes/_bindings_autogen.lua
+Assets/Resources/GameModes/_bindings_autogen.lua.meta
