@@ -966,9 +966,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 116862911}
     m_Modifications:
+    - target: {fileID: 589228006118771278, guid: 3b0d91de497f31e488df09c7cdc7d93f, type: 3}
+      propertyPath: m_Name
+      value: Search
+      objectReference: {fileID: 0}
+    - target: {fileID: 1228075727095387819, guid: 3b0d91de497f31e488df09c7cdc7d93f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1228075727095387819, guid: 3b0d91de497f31e488df09c7cdc7d93f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1228075727095387819, guid: 3b0d91de497f31e488df09c7cdc7d93f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1867117902856584599, guid: 3b0d91de497f31e488df09c7cdc7d93f, type: 3}
+      propertyPath: m_text
+      value: Find a Game
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082917677092365518, guid: 3b0d91de497f31e488df09c7cdc7d93f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.0001622022
+      objectReference: {fileID: 0}
     - target: {fileID: 4970363311610359874, guid: 3b0d91de497f31e488df09c7cdc7d93f, type: 3}
       propertyPath: m_Name
       value: LobbyScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 4970363311610359874, guid: 3b0d91de497f31e488df09c7cdc7d93f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4970363311610359875, guid: 3b0d91de497f31e488df09c7cdc7d93f, type: 3}
       propertyPath: m_Pivot.x
@@ -1053,6 +1081,34 @@ PrefabInstance:
     - target: {fileID: 4970363311610359875, guid: 3b0d91de497f31e488df09c7cdc7d93f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044126770415307529, guid: 3b0d91de497f31e488df09c7cdc7d93f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044126770415307529, guid: 3b0d91de497f31e488df09c7cdc7d93f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -350
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484595971568997178, guid: 3b0d91de497f31e488df09c7cdc7d93f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484595971568997178, guid: 3b0d91de497f31e488df09c7cdc7d93f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7771362336520090909, guid: 3b0d91de497f31e488df09c7cdc7d93f, type: 3}
+      propertyPath: m_text
+      value: Join
+      objectReference: {fileID: 0}
+    - target: {fileID: 8287616407781552403, guid: 3b0d91de497f31e488df09c7cdc7d93f, type: 3}
+      propertyPath: m_Name
+      value: JoinGameButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 8683847030126803252, guid: 3b0d91de497f31e488df09c7cdc7d93f, type: 3}
+      propertyPath: m_text
+      value: Lobbys
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b0d91de497f31e488df09c7cdc7d93f, type: 3}
