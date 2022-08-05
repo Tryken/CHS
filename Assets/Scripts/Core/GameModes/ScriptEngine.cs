@@ -1,8 +1,6 @@
 using System;
-using System.IO;
-using System.Net;
 using Core.GameManagers;
-using Core.ItemsManagers;
+using Core.ItemManagers;
 using MoonSharp.Interpreter;
 using UnityEngine;
 
@@ -55,6 +53,7 @@ namespace Core.GameModes
             UserData.RegisterType<GameManagerAPI>();
             script.Globals["GameManagerAPI"] = GameManagerAPI.Instance;
             UserData.RegisterType<ItemManagerAPI>();
+            UserData.RegisterType<ItemAPI>();
             script.Globals["ItemManagerAPI"] = ItemManagerAPI.Instance;
         }
     }

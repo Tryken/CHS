@@ -1,1 +1,0 @@
-ItemManagerAPI.createItem('potion_of_greater_healing')

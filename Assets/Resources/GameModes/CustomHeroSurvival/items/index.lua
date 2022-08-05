@@ -1,1 +1,1 @@
-require 'items/potion_of_greater_healing'
+require 'items/normal/index'

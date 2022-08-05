@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 
-namespace Core.ItemsManagers.ScriptableObjects
+namespace Core.ItemManagers.ScriptableObjects
 {
     [CreateAssetMenu(menuName = "Lua API/Item", fileName = "New Item")]
     public class ItemSo : ScriptableObject
@@ -11,5 +10,15 @@ namespace Core.ItemsManagers.ScriptableObjects
         [field: SerializeField] public string NameKey { get; set; }
         [field: SerializeField] public string Description { get; set; }
         [field: SerializeField] public string DescriptionKey { get; set; }
+
+        public void SetNameKey(string value)
+        {
+            NameKey = value;
+        }
+        
+        public ItemAPI CreateItemAPI()
+        {
+            return new ItemAPI(ID);
+        }
     }
 }

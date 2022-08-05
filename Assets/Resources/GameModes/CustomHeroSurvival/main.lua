@@ -1,7 +1,6 @@
-require 'items/index'
-
 function onInitGame()
     print("onInitGame")
+    require "items/index"
 end
 GameManagerAPI.onInitGame.add(onInitGame);
 
