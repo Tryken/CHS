@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 429272bb3d6553f4f8385f0c580ea49f, type: 3}
   m_Name: MasterManager
   m_EditorClassIdentifier: 
-  <GameSettings>k__BackingField: {fileID: 11400000, guid: 1f37774ad3b9a20489cae27a64a88327, type: 2}
+  <GameSettingsfield>k__BackingField: {fileID: 11400000, guid: 1f37774ad3b9a20489cae27a64a88327, type: 2}
