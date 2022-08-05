@@ -1,8 +1,8 @@
-using Core.Network.ScriptableObjects;
+using Core.Networks.ScriptableObjects;
 using Photon.Pun;
 using Photon.Realtime;
 
-namespace Core.Network
+namespace Core.Networks
 {
     public class TestConnect : MonoBehaviourPunCallbacks
     {
