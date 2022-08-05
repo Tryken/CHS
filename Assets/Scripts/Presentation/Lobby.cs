@@ -6,13 +6,7 @@ namespace Presentation
     public class Lobby : MonoBehaviour
     {
         [field: SerializeField] private RectTransform LobbyMenu { get; set; }
-
-        private GameObject MainMenu { get; set; }
-
-        private void Start()
-        {
-            MainMenu = GameObject.FindWithTag("MainScreen");
-        }
+        [field: SerializeField] private RectTransform MainMenu { get; set; }
         
         private void Update()
         {
