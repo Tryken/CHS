@@ -1,3 +1,5 @@
+require 'items/index'
+
 function onInitGame()
     print("onInitGame")
 end
