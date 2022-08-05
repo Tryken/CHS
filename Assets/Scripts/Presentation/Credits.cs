@@ -1,22 +1,32 @@
 ﻿using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Presentation
 {
     public class Credits : MonoBehaviour
     {
-        [field: SerializeField] private RectTransform creditsMenu;
+        [field: SerializeField] private RectTransform CreditsMenu { get; set; }
 
-        private GameObject _mainMenu;
+        private GameObject MainMenu { get; set; }
         
         private void Start()
         {
-            _mainMenu = GameObject.FindWithTag("MainScreen");
+            MainMenu = GameObject.FindWithTag("MainScreen");
+        }
+        
+        private void Update()
+        {
+            if (!Keyboard.current.escapeKey.isPressed)
+                return;
+            
+            MainMenu.transform.gameObject.SetActive(true);
+            CreditsMenu.transform.gameObject.SetActive(false);
         }
     
         public void OpenCredits()
         {
-            _mainMenu.transform.gameObject.SetActive(false);
-            creditsMenu.transform.gameObject.SetActive(true);
+            MainMenu.transform.gameObject.SetActive(false);
+            CreditsMenu.transform.gameObject.SetActive(true);
         }
     }
 }

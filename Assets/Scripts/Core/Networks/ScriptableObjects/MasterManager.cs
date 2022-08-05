@@ -1,10 +1,21 @@
 using UnityEngine;
 
-namespace Core.Network.ScriptableObjects
+namespace Core.Networks.ScriptableObjects
 {
-    [CreateAssetMenu(menuName = "Manager/MasterManager")]
+    [CreateAssetMenu(menuName = "Network/MasterManager")]
     public class MasterManager : ScriptableObject
     {
-        public static GameSettings GameSettings => CreateInstance<GameSettings>();
+        public static GameSettings GameSettings
+        {
+            get
+            {
+                if (GameSettings is null)
+                {
+                    CreateInstance<GameSettings>();
+                }
+
+                return GameSettings;
+            }
+        }
     }
 }

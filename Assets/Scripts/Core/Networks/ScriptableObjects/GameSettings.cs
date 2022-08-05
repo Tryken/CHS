@@ -1,9 +1,9 @@
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Core.Network.ScriptableObjects
+namespace Core.Networks.ScriptableObjects
 {
-    [CreateAssetMenu(menuName = "Manager/GameSettings")]
+    [CreateAssetMenu(menuName = "Network/GameSettings")]
     public class GameSettings : ScriptableObject
     {
         [field: SerializeField] public string GameVersion { get; set; } = "0.0.1";
