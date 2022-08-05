@@ -1,21 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
+using Presentation.ScriptableObjects;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class CreateLobby : MonoBehaviour
+namespace Presentation
 {
-    [field: SerializeField] private RectTransform createLobbyMenu;
-
-    private GameObject _mainMenu;
+    public class CreateLobby : MonoBehaviour
+    {
+        [field: SerializeField] private RectTransform CreateLobbyMenu { get; set; }
         
-    private void Start()
-    {
-        _mainMenu = GameObject.FindWithTag("MainScreen");
-    }
-    
-    public void CreateALobby()
-    {
-        _mainMenu.transform.gameObject.SetActive(false);
-        createLobbyMenu.transform.gameObject.SetActive(true);
+        private RoomOption RoomOption { get; set; }
+        private GameObject MainMenu { get; set; }
+        
+        private void Start()
+        {
+            MainMenu = GameObject.FindWithTag("MainScreen");
+        }
+
+        private void Update()
+        {
+            if (!Keyboard.current.escapeKey.isPressed) return;
+            MainMenu.transform.gameObject.SetActive(true);
+            CreateLobbyMenu.transform.gameObject.SetActive(false);
+        }
+
+        public void CreateALobby()
+        {
+            MainMenu.transform.gameObject.SetActive(false);
+            CreateLobbyMenu.transform.gameObject.SetActive(true);
+            RoomOption = ScriptableObject.CreateInstance<RoomOption>();
+        }
     }
 }

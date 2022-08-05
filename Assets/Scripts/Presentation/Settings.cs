@@ -1,22 +1,32 @@
 ﻿using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Presentation
 {
     public class Settings : MonoBehaviour
     {
-        [field: SerializeField] private RectTransform settingsMenu;
+        [field: SerializeField] private RectTransform SettingsMenu { get; set; }
 
-        private GameObject _mainMenu;
-        
+        private GameObject MainMenu { get; set; }
+
         private void Start()
         {
-            _mainMenu = GameObject.FindWithTag("MainScreen");
+            MainMenu = GameObject.FindWithTag("MainScreen");
+        }
+        
+        private void Update()
+        {
+            if (!Keyboard.current.escapeKey.isPressed)
+                return;
+            
+            MainMenu.transform.gameObject.SetActive(true);
+            SettingsMenu.transform.gameObject.SetActive(false);
         }
     
         public void OpenSettings()
         {
-            _mainMenu.transform.gameObject.SetActive(false);
-            settingsMenu.transform.gameObject.SetActive(true);
+            MainMenu.transform.gameObject.SetActive(false);
+            SettingsMenu.transform.gameObject.SetActive(true);
         }
     }
 }
