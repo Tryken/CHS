@@ -26,7 +26,6 @@ namespace Presentation
 
         public void CreateALobby()
         {
-            Debug.Log("Hello there");
             MainMenu.transform.gameObject.SetActive(false);
             CreateLobbyMenu.transform.gameObject.SetActive(true);
             RoomOption = ScriptableObject.CreateInstance<RoomOption>();
