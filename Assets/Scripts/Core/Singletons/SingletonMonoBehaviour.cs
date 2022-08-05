@@ -6,7 +6,7 @@ namespace Core.Singletons
     {
         private static T _mInstance;
 
-        protected static T Instance
+        public static T Instance
         {
             get
             {
@@ -15,7 +15,7 @@ namespace Core.Singletons
             }
         }
 
-        protected bool Exists()
+        public bool Exists()
         {
             return (_mInstance != null);
         }

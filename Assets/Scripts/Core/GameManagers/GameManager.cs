@@ -1,5 +1,8 @@
 using System;
+using Core.GameModes;
 using Core.Singletons;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 namespace Core.GameManagers
@@ -9,6 +12,12 @@ namespace Core.GameManagers
         [field:SerializeField]
         public GameManagerState State { get; private set; }
 
+        private void Awake()
+        {
+            AssetDatabase.DeleteAsset("Assets/_tmp");
+            AssetDatabase.CreateFolder("Assets", "_tmp");
+        }
+        
         public void SetState(GameManagerState state)
         {
             State = state;
@@ -33,11 +42,17 @@ namespace Core.GameManagers
                     throw new ArgumentOutOfRangeException(nameof(state), state, null);
             }
         }
+        
+        public void Clear()
+        {
+            GameManagerAPI.Instance.Clear();
+            AssetDatabase.DeleteAsset("Assets/_tmp");
+        }
 
-        private static void OnSetCloseState()
+        private void OnSetCloseState()
         {
             GameManagerAPI.Instance.RaiseOnCloseGame();
-            GameManagerAPI.Instance.Clear();
+            GameModeManager.Instance.ClearGameManager();
         }
     }
 }

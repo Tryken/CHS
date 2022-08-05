@@ -1,7 +1,6 @@
 using System;
-using System.IO;
-using System.Net;
 using Core.GameManagers;
+using Core.ItemManagers;
 using MoonSharp.Interpreter;
 using UnityEngine;
 
@@ -9,8 +8,6 @@ namespace Core.GameModes
 {
     public class ScriptEngine
     {
-        private const string BASE_GAME_MODE_PATH = "./Assets/Resources/GameModes";
-
         private Script script;
         
         public ScriptEngine(Script script)
@@ -18,25 +15,34 @@ namespace Core.GameModes
             this.script = script;
         }
         
-        public static ScriptEngine InitScriptEngine(string mainFile)
+        public static ScriptEngine InitScriptEngine(string gameMode)
         {
-            var script = new Script(CoreModules.Preset_HardSandbox)
+            var script = new Script(CoreModules.GlobalConsts | CoreModules.LoadMethods | CoreModules.Basic)
             {
                 Options =
                 {
                     DebugPrint = Debug.Log,
                     ScriptLoader = new ScriptLoader() 
                     { 
-                        ModulePaths = new[] { "?_module.lua" } 
+                        ModulePaths = new[] { "?.lua" } 
                     }
                 }
             };
             
             RegisterGlobals(script);
             
-            var mainFilePath = $"{BASE_GAME_MODE_PATH}/{mainFile}";
-            var mainSource = File.ReadAllText(mainFilePath);
-            script.DoString(mainSource);
+            try 
+            {
+                script.DoString("require 'main'");
+            }
+            catch (ScriptRuntimeException ex)
+            {
+                Debug.LogErrorFormat("GameMode {0} RuntimeException {1}", gameMode, ex.DecoratedMessage);
+            }
+            catch (SyntaxErrorException ex)
+            {
+                Debug.LogErrorFormat("GameMode {0} SyntaxErrorException {1}", gameMode, ex.DecoratedMessage);
+            }
 
             return new ScriptEngine(script);
         }
@@ -46,6 +52,9 @@ namespace Core.GameModes
             UserData.RegisterType<EventArgs>();
             UserData.RegisterType<GameManagerAPI>();
             script.Globals["GameManagerAPI"] = GameManagerAPI.Instance;
+            UserData.RegisterType<ItemManagerAPI>();
+            UserData.RegisterType<ItemAPI>();
+            script.Globals["ItemManagerAPI"] = ItemManagerAPI.Instance;
         }
     }
 }
