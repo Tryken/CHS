@@ -1,21 +1,14 @@
+using Core.Singletons;
 using UnityEngine;
 
 namespace Core.Networks.ScriptableObjects
 {
     [CreateAssetMenu(menuName = "Network/MasterManager")]
-    public class MasterManager : ScriptableObject
+    public class MasterManager : SingletonScriptableObject<MasterManager>
     {
-        public static GameSettings GameSettings
-        {
-            get
-            {
-                if (GameSettings is null)
-                {
-                    CreateInstance<GameSettings>();
-                }
+        [field: SerializeField]
+        public GameSettings GameSettingsfield { get; set; }
 
-                return GameSettings;
-            }
-        }
+        public static GameSettings GameSettings => Instance.GameSettingsfield;
     }
 }
