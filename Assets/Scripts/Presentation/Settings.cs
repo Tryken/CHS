@@ -6,14 +6,8 @@ namespace Presentation
     public class Settings : MonoBehaviour
     {
         [field: SerializeField] private RectTransform SettingsMenu { get; set; }
+        [field: SerializeField] private RectTransform MainMenu { get; set; }
 
-        private GameObject MainMenu { get; set; }
-
-        private void Start()
-        {
-            MainMenu = GameObject.FindWithTag("MainScreen");
-        }
-        
         private void Update()
         {
             if (!Keyboard.current.escapeKey.isPressed)

@@ -7,13 +7,8 @@ namespace Presentation
     {
         [field: SerializeField] private RectTransform CreditsMenu { get; set; }
 
-        private GameObject MainMenu { get; set; }
-        
-        private void Start()
-        {
-            MainMenu = GameObject.FindWithTag("MainScreen");
-        }
-        
+        [field: SerializeField] private RectTransform MainMenu { get; set; }
+
         private void Update()
         {
             if (!Keyboard.current.escapeKey.isPressed)

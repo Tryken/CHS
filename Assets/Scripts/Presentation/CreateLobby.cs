@@ -1,4 +1,3 @@
-using System;
 using Presentation.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -9,14 +8,10 @@ namespace Presentation
     {
         [field: SerializeField] private RectTransform CreateLobbyMenu { get; set; }
         
-        private RoomOption RoomOption { get; set; }
-        private GameObject MainMenu { get; set; }
+        [field: SerializeField] private RectTransform MainMenu { get; set; }
         
-        private void Start()
-        {
-            MainMenu = GameObject.FindWithTag("MainScreen");
-        }
-
+        private RoomOption RoomOption { get; set; }
+        
         private void Update()
         {
             if (!Keyboard.current.escapeKey.isPressed) return;
