@@ -1,4 +1,4 @@
-using Core.Networks.MasterManagers;
+using Core.Managers.GameSettingsManager;
 using Core.Networks.ScriptableObjects;
 using Photon.Pun;
 using Photon.Realtime;
@@ -10,8 +10,8 @@ namespace Core.Networks
         private void Start()
         {
             print("Connection to Server");
-            PhotonNetwork.NickName = MasterManager.GameSettings.NickName;
-            PhotonNetwork.GameVersion = MasterManager.GameSettings.GameVersion;
+            PhotonNetwork.NickName = GameSettingsManager.GameSettings.NickName;
+            PhotonNetwork.GameVersion = GameSettingsManager.GameSettings.GameVersion;
             PhotonNetwork.ConnectUsingSettings();
         }
 

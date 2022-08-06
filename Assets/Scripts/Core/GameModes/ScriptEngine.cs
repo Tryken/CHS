@@ -1,6 +1,7 @@
 using System;
-using Core.GameManagers;
 using Core.ItemManagers;
+using Core.Managers.GameManagers;
+using Core.Managers.ItemManagers;
 using MoonSharp.Interpreter;
 using UnityEngine;
 

@@ -1,7 +1,6 @@
-using MoonSharp.Interpreter;
-using UnityEngine;
+using Core.ItemManagers;
 
-namespace Core.ItemManagers
+namespace Core.Managers.ItemManagers
 {
     public class ItemAPI
     {

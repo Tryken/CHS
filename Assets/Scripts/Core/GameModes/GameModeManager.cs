@@ -1,5 +1,6 @@
-using Core.GameManagers;
 using Core.ItemManagers;
+using Core.Managers.GameManagers;
+using Core.Managers.ItemManagers;
 using Core.Singletons;
 using UnityEngine;
 

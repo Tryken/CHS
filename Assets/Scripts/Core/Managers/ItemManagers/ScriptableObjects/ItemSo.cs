@@ -1,3 +1,4 @@
+using Core.Managers.ItemManagers;
 using UnityEngine;
 
 namespace Core.ItemManagers.ScriptableObjects
