@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Core.Singletons
 {
+    [Obsolete]
     public abstract class SingletonScriptableObject<T> : ScriptableObject where T : SingletonScriptableObject<T>, new()
     {
         private static T _mInstance;
