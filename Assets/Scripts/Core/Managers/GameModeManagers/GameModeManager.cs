@@ -1,6 +1,7 @@
 using Core.GameModes;
 using Core.Managers.GameManagers;
 using Core.Managers.ItemManagers;
+using Core.Managers.TranslationManagers;
 using Core.Singletons;
 using UnityEngine;
 
@@ -20,12 +21,14 @@ namespace Core.Managers.GameModeManagers
 
         public void LoadGameMode(string gameModeName)
         {
-            if (CurrentGameMode != "")
+            if (!string.IsNullOrEmpty(CurrentGameMode))
             {
                 GameManager.Instance.SetState(GameManagerState.Close);
             }
-            
             CurrentGameMode = gameModeName;
+            
+            TranslationManager.Instance.LoadFromCsvFile($"{BASE_GAME_MODE_PATH}/{CurrentGameMode}/translation.csv");
+            
             ScriptEngine.InitScriptEngine(gameModeName);
             
             GameManager.Instance.SetState(GameManagerState.Init);
@@ -35,6 +38,7 @@ namespace Core.Managers.GameModeManagers
         {
             GameManager.Instance.Clear();
             ItemManager.Instance.Clear();
+            TranslationManager.Instance.Clear();
         }
     }
 }

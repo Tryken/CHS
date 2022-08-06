@@ -1,15 +1,16 @@
+using System;
 using System.Collections.Generic;
-using Core.ItemManagers;
-using Core.ItemManagers.ScriptableObjects;
+using Core.Managers.ItemManagers.ScriptableObjects;
 using Core.Singletons;
 using UnityEditor;
 using UnityEngine;
 
 namespace Core.Managers.ItemManagers
 {
+    [Serializable]
     public class ItemManager : SingletonMonoBehaviour<ItemManager>
     {
-        private Dictionary<string, ItemSo> items = new();
+        public Dictionary<string, ItemSo> Items;
         
         private void Start()
         {
@@ -20,14 +21,14 @@ namespace Core.Managers.ItemManagers
         {
             var asset = ScriptableObject.CreateInstance<ItemSo>();
             asset.ID = id;
-            items.Add(id, asset);
+            Items.Add(id, asset);
             AssetDatabase.CreateAsset(asset, $"Assets/_tmp/Items/{id}.asset");
             return GetItemSo(id);
         }
 
         public ItemSo GetItemSo(string id)
         {
-            return items.ContainsKey(id) ?  items[id] : null;
+            return Items.ContainsKey(id) ?  Items[id] : null;
         }
         
         public void Clear()
