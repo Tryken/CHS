@@ -2,7 +2,7 @@ using Presentation.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Presentation
+namespace Presentation.EventScripts
 {
     public class CreateLobby : MonoBehaviour
     {
@@ -19,7 +19,7 @@ namespace Presentation
             CreateLobbyMenu.transform.gameObject.SetActive(false);
         }
 
-        public void CreateALobby()
+        public void OpenLobby()
         {
             MainMenu.transform.gameObject.SetActive(false);
             CreateLobbyMenu.transform.gameObject.SetActive(true);

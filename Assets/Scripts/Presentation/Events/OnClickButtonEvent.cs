@@ -2,7 +2,7 @@ using Events;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Presentation.EventScripts
+namespace Presentation.Events
 {
     public class OnClickButtonEvent : MonoBehaviour
     {

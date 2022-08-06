@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Presentation
+namespace Presentation.EventScripts
 {
     public class BackToMain : MonoBehaviour
     {

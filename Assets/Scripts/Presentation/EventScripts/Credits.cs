@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Presentation
+namespace Presentation.EventScripts
 {
     public class Credits : MonoBehaviour
     {
