@@ -1,5 +1,4 @@
 using System;
-using Core.ItemManagers;
 using Core.Managers.GameManagers;
 using Core.Managers.ItemManagers;
 using MoonSharp.Interpreter;
