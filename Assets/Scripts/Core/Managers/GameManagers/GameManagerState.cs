@@ -1,4 +1,4 @@
-namespace Core.GameManagers
+namespace Core.Managers.GameManagers
 {
     public enum GameManagerState
     {

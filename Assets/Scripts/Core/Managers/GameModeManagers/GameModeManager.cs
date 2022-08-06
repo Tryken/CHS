@@ -1,9 +1,10 @@
-using Core.GameManagers;
-using Core.ItemManagers;
+using Core.GameModes;
+using Core.Managers.GameManagers;
+using Core.Managers.ItemManagers;
 using Core.Singletons;
 using UnityEngine;
 
-namespace Core.GameModes
+namespace Core.Managers.GameModeManagers
 {
     public class GameModeManager : SingletonMonoBehaviour<GameModeManager>
     {

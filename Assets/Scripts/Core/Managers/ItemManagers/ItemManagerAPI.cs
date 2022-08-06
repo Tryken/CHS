@@ -1,7 +1,7 @@
 using Core.Singletons;
 using MoonSharp.Interpreter;
 
-namespace Core.ItemManagers
+namespace Core.Managers.ItemManagers
 {
     [MoonSharpUserData]
     public class ItemManagerAPI : Singleton<ItemManagerAPI> 

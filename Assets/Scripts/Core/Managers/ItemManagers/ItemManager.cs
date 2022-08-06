@@ -1,11 +1,11 @@
 using System.Collections.Generic;
-using System.Linq;
+using Core.ItemManagers;
 using Core.ItemManagers.ScriptableObjects;
 using Core.Singletons;
 using UnityEditor;
 using UnityEngine;
 
-namespace Core.ItemManagers
+namespace Core.Managers.ItemManagers
 {
     public class ItemManager : SingletonMonoBehaviour<ItemManager>
     {

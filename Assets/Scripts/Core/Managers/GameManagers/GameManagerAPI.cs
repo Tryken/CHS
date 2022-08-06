@@ -1,9 +1,8 @@
 ﻿using System;
-
 using Core.Singletons;
 using MoonSharp.Interpreter;
 
-namespace Core.GameManagers
+namespace Core.Managers.GameManagers
 {
 	[MoonSharpUserData]
 	public class GameManagerAPI : Singleton<GameManagerAPI> 

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using Core.GameManagers;
+using Core.Managers.GameManagers;
 using Core.Singletons;
 using MoonSharp.Interpreter;
 using UnityEngine;
 
-namespace Core.GameModes
+namespace Core.Managers.MoonSharpTypesManagers
 {
     public class MoonSharpTypesManager : SingletonMonoBehaviour<MoonSharpTypesManager>
     {

@@ -1,31 +1,20 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Core.Singletons
 {
-    public abstract class SingletonScriptableObject<T> : ScriptableObject where T : SingletonScriptableObject<T>
+    [Obsolete]
+    public abstract class SingletonScriptableObject<T> : ScriptableObject where T : SingletonScriptableObject<T>, new()
     {
         private static T _mInstance;
 
-        public static T Instance
-        {
-            get
-            {
-                if (_mInstance != null) return _mInstance;
-                return FindObjectOfType(typeof(T)) as T;
-            }
-        }
+        public static T Instance => _mInstance != null ? _mInstance : CreateInstance<T>();
 
-        protected bool Exists()
+        public bool Exists()
         {
             return (_mInstance != null);
         }
-
-        private void Awake()
-        {
-            if (_mInstance != null) return;
-            _mInstance = this as T;
-        }
-
+        
         private void OnApplicationQuit()
         {
             _mInstance = null;
