@@ -8,7 +8,7 @@ using Core.Singletons;
 using MoonSharp.Interpreter;
 using UnityEngine;
 
-namespace Core.GameModes
+namespace Core.Managers.MoonSharpTypesManagers
 {
     public class MoonSharpTypesManager : SingletonMonoBehaviour<MoonSharpTypesManager>
     {

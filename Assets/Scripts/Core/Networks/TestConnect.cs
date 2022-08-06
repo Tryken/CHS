@@ -1,4 +1,4 @@
-using Core.Managers.GameSettingsManager;
+using Core.Managers.GameSettingsManagers;
 using Core.Networks.ScriptableObjects;
 using Photon.Pun;
 using Photon.Realtime;
