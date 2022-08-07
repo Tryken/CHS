@@ -518,6 +518,7 @@ GameObject:
   - component: {fileID: 7891586174399003773}
   - component: {fileID: 931941177591178863}
   - component: {fileID: 1086305296689744823}
+  - component: {fileID: 8034054357249306291}
   m_Layer: 5
   m_Name: CurrentLobby
   m_TagString: Untagged
@@ -573,6 +574,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41584bb75d0e2654fa5ab93e9b144d0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <CreateACurrentLobby>k__BackingField: {fileID: 0}
+  <MainMenu>k__BackingField: {fileID: 0}
+--- !u!114 &8034054357249306291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7636362278960443995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e5d2931ca5c40e08ecbec9f9dbb3f41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TextMeshPro>k__BackingField: {fileID: 0}
 --- !u!1001 &3690128318964240443
 PrefabInstance:
   m_ObjectHideFlags: 0

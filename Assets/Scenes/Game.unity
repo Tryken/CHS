@@ -167,6 +167,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b2c6261c592418498e2f86111b459d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,6 +314,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99f6c81e860548dfa513449ca0934cad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: Items
+      Entry: 6
+      Data: 
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,6 +486,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97e1f6a594219d448993dd1781a7d202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   <CurrentGameMode>k__BackingField: 
 --- !u!1 &1533596359
 GameObject:
@@ -590,6 +620,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d204aa36c7c43b49a21ce5150a71f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   <State>k__BackingField: 0
 --- !u!1 &1831877591
 GameObject:
@@ -602,7 +641,7 @@ GameObject:
   - component: {fileID: 1831877592}
   - component: {fileID: 1831877593}
   m_Layer: 0
-  m_Name: GameSettingsManager
+  m_Name: NetworkManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -635,4 +674,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 429272bb3d6553f4f8385f0c580ea49f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   <GameSettingsField>k__BackingField: {fileID: 11400000, guid: 1f37774ad3b9a20489cae27a64a88327, type: 2}

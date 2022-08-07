@@ -1,17 +1,15 @@
-using Core.Managers.GameSettingsManagers;
-using Core.Networks.ScriptableObjects;
 using Photon.Pun;
 using Photon.Realtime;
 
-namespace Core.Networks
+namespace Core.Managers.NetworkManagers
 {
     public class TestConnect : MonoBehaviourPunCallbacks
     {
         private void Start()
         {
             print("Connection to Server");
-            PhotonNetwork.NickName = GameSettingsManager.GameSettings.NickName;
-            PhotonNetwork.GameVersion = GameSettingsManager.GameSettings.GameVersion;
+            PhotonNetwork.NickName = NetworkManager.GameSettings.NickName;
+            PhotonNetwork.GameVersion = NetworkManager.GameSettings.GameVersion;
             PhotonNetwork.ConnectUsingSettings();
         }
 
