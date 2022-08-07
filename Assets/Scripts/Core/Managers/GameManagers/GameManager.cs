@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace Core.Managers.GameManagers
 {
+    [Serializable]
     public class GameManager : SingletonMonoBehaviour<GameManager>
     {
         [field:SerializeField]
