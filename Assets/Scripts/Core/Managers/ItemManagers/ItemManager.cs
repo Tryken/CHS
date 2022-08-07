@@ -10,7 +10,7 @@ namespace Core.Managers.ItemManagers
     [Serializable]
     public class ItemManager : SingletonMonoBehaviour<ItemManager>
     {
-        public Dictionary<string, ItemSo> Items;
+        public Dictionary<string, ItemSo> Items = new();
         
         private void Start()
         {

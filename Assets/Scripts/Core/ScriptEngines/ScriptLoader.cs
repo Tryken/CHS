@@ -1,12 +1,10 @@
 using System.IO;
-using Core.GameModes.Exceptions;
 using Core.Managers.GameModeManagers;
+using Core.ScriptEngines.Exceptions;
 using MoonSharp.Interpreter;
 using MoonSharp.Interpreter.Loaders;
-using Unity.VisualScripting;
-using UnityEngine;
 
-namespace Core.GameModes
+namespace Core.ScriptEngines
 {
     public class ScriptLoader : ScriptLoaderBase
     {

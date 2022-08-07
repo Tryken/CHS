@@ -4,7 +4,7 @@ using Core.Managers.ItemManagers;
 using MoonSharp.Interpreter;
 using UnityEngine;
 
-namespace Core.GameModes
+namespace Core.ScriptEngines
 {
     public class ScriptEngine
     {

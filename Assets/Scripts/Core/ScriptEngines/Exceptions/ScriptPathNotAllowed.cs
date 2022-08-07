@@ -1,6 +1,6 @@
 using System;
 
-namespace Core.GameModes.Exceptions
+namespace Core.ScriptEngines.Exceptions
 {
     public class ScriptPathNotAllowed : Exception
     {

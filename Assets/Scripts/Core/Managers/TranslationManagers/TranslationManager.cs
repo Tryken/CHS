@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -9,11 +10,12 @@ using UnityEngine;
 
 namespace Core.Managers.TranslationManagers
 {
+    [Serializable]
     public class TranslationManager : SingletonMonoBehaviour<TranslationManager>
     {
-        private string currentLanguage = "en-US";
-        private readonly Dictionary<string, LanguageSo> _languages = new();
-        
+        public Dictionary<string, LanguageSo> Languages = new();
+        private string _currentLanguage = "en-US";
+
         private void Start()
         {
             AssetDatabase.CreateFolder("Assets/_tmp","Languages");  
@@ -23,19 +25,19 @@ namespace Core.Managers.TranslationManagers
         {
             var asset = ScriptableObject.CreateInstance<LanguageSo>();
             asset.ID = id;
-            _languages.Add(id, asset);
+            Languages.Add(id, asset);
             AssetDatabase.CreateAsset(asset, $"Assets/_tmp/Languages/{id}.asset");
             return GetLanguageSo(id);
         }
         
         public LanguageSo GetLanguageSo(string id)
         {
-            return _languages.ContainsKey(id) ?  _languages[id] : null;
+            return Languages.ContainsKey(id) ?  Languages[id] : null;
         }
 
         public string GetCurrentTranslation(string key)
         {
-            return GetTranslation(currentLanguage, key);
+            return GetTranslation(_currentLanguage, key);
         }
 
         public string GetTranslation(string id, string key)
