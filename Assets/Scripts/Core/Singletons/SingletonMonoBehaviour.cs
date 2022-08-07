@@ -27,6 +27,7 @@ namespace Core.Singletons
             _mInstance = this as T;
         }
         
+        
         public void OnApplicationQuit()
         {
             _mInstance = null;

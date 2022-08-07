@@ -1,12 +1,13 @@
 ﻿using Core.Managers.NetworkManagers.RoomManagers.ScriptableObjects;
 using Photon.Pun;
+using Photon.Realtime;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
 
 namespace Core.Managers.NetworkManagers.RoomManagers
 {
-    public class CreateRoomManager : MonoBehaviourPunCallbacks
+    public class RoomManager : MonoBehaviourPunCallbacks
     {
         private const string FOLDER_NAME = "RoomOption";
         private const string PARENT_FOLDER_NAME = "Assets/_tmp";
@@ -25,7 +26,7 @@ namespace Core.Managers.NetworkManagers.RoomManagers
 
             var roomOptionSo = ScriptableObject.CreateInstance<RoomOptionSo>();
             AssetDatabase.CreateAsset(roomOptionSo, $"{PARENT_FOLDER_NAME}/{FOLDER_NAME}/{TextMeshPro.text}.asset");
-            PhotonNetwork.CreateRoom(TextMeshPro.text, roomOptionSo.ConvertToPhotonRoomOptions());
+            PhotonNetwork.CreateRoom(TextMeshPro.text, roomOptionSo.ConvertToPhotonRoomOptions(), TypedLobby.Default);
         }
         
         public override void OnJoinedRoom()
@@ -41,6 +42,20 @@ namespace Core.Managers.NetworkManagers.RoomManagers
         public override void OnCreateRoomFailed(short returnCode, string message)
         {
             Debug.Log($"Failed {returnCode} - {message}");
+        }
+        
+        public void LeaveRoom()
+        {
+            var resultOfLeaveRoom = PhotonNetwork.LeaveRoom();
+            if (!resultOfLeaveRoom)
+            {
+                Debug.LogWarning("Player is not connected to any room");
+            }
+        }
+        
+        public override void OnLeftRoom()
+        {
+            Debug.Log("OnLeftRoom");
         }
     }
 }
