@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Presentation.EventScripts
 {
@@ -11,6 +12,13 @@ namespace Presentation.EventScripts
         private void Start()
         {
             Canvas = FindObjectOfType<Canvas>();
+        }
+
+        private void Update()
+        {
+            if (!Keyboard.current.escapeKey.isPressed)
+                return;
+            BackToMainMenu();
         }
 
         public void BackToMainMenu()

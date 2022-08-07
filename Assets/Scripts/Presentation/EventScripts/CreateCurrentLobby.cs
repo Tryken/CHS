@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace Presentation.EventScripts
 {
@@ -9,15 +8,6 @@ namespace Presentation.EventScripts
 
         [field: SerializeField] private RectTransform MainMenu { get; set; }
 
-        private void Update()
-        {
-            if (!Keyboard.current.escapeKey.isPressed)
-                return;
-            
-            MainMenu.transform.gameObject.SetActive(true);
-            CreateACurrentLobby.transform.gameObject.SetActive(false);
-        }
-    
         public void OpenLobby()
         {
             MainMenu.transform.gameObject.SetActive(false);
