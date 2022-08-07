@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Core.Managers.NetworkManagers.RoomManagers
 {
-    public class RoomManager : MonoBehaviourPunCallbacks
+    public class CreateRoomManager : MonoBehaviourPunCallbacks
     {
         private const string FOLDER_NAME = "RoomOption";
         private const string PARENT_FOLDER_NAME = "Assets/_tmp";
@@ -15,7 +15,6 @@ namespace Core.Managers.NetworkManagers.RoomManagers
         
         private void Start()
         {
-            AssetDatabase.DeleteAsset($"{PARENT_FOLDER_NAME}/{FOLDER_NAME}");
             AssetDatabase.CreateFolder(PARENT_FOLDER_NAME,FOLDER_NAME); 
         }
 
@@ -28,7 +27,7 @@ namespace Core.Managers.NetworkManagers.RoomManagers
             AssetDatabase.CreateAsset(roomOptionSo, $"{PARENT_FOLDER_NAME}/{FOLDER_NAME}/{TextMeshPro.text}.asset");
             PhotonNetwork.CreateRoom(TextMeshPro.text, roomOptionSo.ConvertToPhotonRoomOptions());
         }
-
+        
         public override void OnJoinedRoom()
         {
             Debug.Log("Join to room");
