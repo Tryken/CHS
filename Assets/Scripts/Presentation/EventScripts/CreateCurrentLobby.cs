@@ -1,3 +1,4 @@
+using Photon.Pun;
 using UnityEngine;
 
 namespace Presentation.EventScripts
@@ -11,6 +12,8 @@ namespace Presentation.EventScripts
         public void OpenLobby()
         {
             MainMenu.transform.gameObject.SetActive(false);
+            
+            
             CreateACurrentLobby.transform.gameObject.SetActive(true);
         }
     }

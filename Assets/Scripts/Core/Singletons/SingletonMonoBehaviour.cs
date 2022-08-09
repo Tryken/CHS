@@ -21,13 +21,14 @@ namespace Core.Singletons
             return (_mInstance != null);
         }
 
-        private void Awake()
+        public void Awake()
         {
             if (_mInstance != null) return;
             _mInstance = this as T;
         }
-
-        private void OnApplicationQuit()
+        
+        
+        public void OnApplicationQuit()
         {
             _mInstance = null;
         }
