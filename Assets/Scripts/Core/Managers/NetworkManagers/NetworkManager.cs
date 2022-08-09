@@ -1,4 +1,4 @@
-using Core.Networks.ScriptableObjects;
+using Core.Managers.NetworkManagers.ScriptableObjects;
 using Core.Singletons;
 using UnityEngine;
 
