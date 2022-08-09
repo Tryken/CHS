@@ -1,7 +1,7 @@
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Core.Networks.ScriptableObjects
+namespace Core.Managers.NetworkManagers.ScriptableObjects
 {
     [CreateAssetMenu(menuName = "Network/GameSettings")]
     public class GameSettings : ScriptableObject

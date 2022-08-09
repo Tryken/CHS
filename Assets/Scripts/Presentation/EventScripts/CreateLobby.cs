@@ -1,4 +1,4 @@
-using Presentation.ScriptableObjects;
+using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,13 +10,10 @@ namespace Presentation.EventScripts
         
         [field: SerializeField] private RectTransform MainMenu { get; set; }
         
-        private RoomOption RoomOption { get; set; }
-
         public void OpenLobby()
         {
             MainMenu.transform.gameObject.SetActive(false);
             CreateLobbyMenu.transform.gameObject.SetActive(true);
-            RoomOption = ScriptableObject.CreateInstance<RoomOption>();
         }
     }
 }

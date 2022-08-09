@@ -1,17 +1,17 @@
-﻿using Sirenix.OdinInspector;
+﻿using Photon.Pun;
 
 namespace Core.Singletons
 {
-    public abstract class SingletonMonoBehaviour<T> : SerializedMonoBehaviour where T : SingletonMonoBehaviour<T>
+    public class SingletonMonoBehaviourPunCallbacks : MonoBehaviourPunCallbacks
     {
-        private static T _mInstance;
-
-        public static T Instance
+        private static SingletonMonoBehaviourPunCallbacks _mInstance;
+        
+        public static SingletonMonoBehaviourPunCallbacks Instance
         {
             get
             {
                 if (_mInstance != null) return _mInstance;
-                return FindObjectOfType(typeof(T)) as T;
+                return FindObjectOfType(typeof(SingletonMonoBehaviourPunCallbacks)) as SingletonMonoBehaviourPunCallbacks;
             }
         }
 
@@ -27,7 +27,7 @@ namespace Core.Singletons
                 return;
             }
             
-            _mInstance = this as T;
+            _mInstance = this;
             DontDestroyOnLoad(transform.root.gameObject);
         }
         

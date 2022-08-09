@@ -251,6 +251,7 @@ GameObject:
   - component: {fileID: 1017816184514947690}
   - component: {fileID: 1017816184514947688}
   - component: {fileID: 1017816184514947691}
+  - component: {fileID: 238626779473328303}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -306,6 +307,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 238626779473328303}
+        m_TargetAssemblyTypeName: Core.Managers.NetworkManagers.RoomManagers.RoomManager,
+          Assembly-CSharp
+        m_MethodName: LeaveRoom
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1017816184514947691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,6 +343,7 @@ GameObject:
   - component: {fileID: 1017816184806560388}
   - component: {fileID: 1017816184806560410}
   - component: {fileID: 1017816184806560389}
+  - component: {fileID: 415782081907017459}
   m_Layer: 5
   m_Name: Lobby
   m_TagString: Untagged
@@ -452,6 +467,7 @@ GameObject:
   - component: {fileID: 1738614551392696267}
   - component: {fileID: 6005113244302232150}
   - component: {fileID: 3542392918776217591}
+  - component: {fileID: 8203816015546185027}
   m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
@@ -494,7 +510,32 @@ MonoBehaviour:
   gameEvent: {fileID: 11400000, guid: a0213db6772c615478645f55cbd813ce, type: 2}
   unityEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3542392918776217591}
+        m_TargetAssemblyTypeName: Presentation.EventScripts.BackToMain, Assembly-CSharp
+        m_MethodName: BackToMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8203816015546185027}
+        m_TargetAssemblyTypeName: Core.Managers.NetworkManagers.RoomManagers.RoomManager,
+          Assembly-CSharp
+        m_MethodName: LeaveRoom
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3542392918776217591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -507,6 +548,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 264741d595939674582447a5c11b2fb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8203816015546185027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182842522451105124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e5d2931ca5c40e08ecbec9f9dbb3f41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TextMeshPro>k__BackingField: {fileID: 0}
 --- !u!1 &7636362278960443995
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,6 +572,7 @@ GameObject:
   - component: {fileID: 7891586174399003773}
   - component: {fileID: 931941177591178863}
   - component: {fileID: 1086305296689744823}
+  - component: {fileID: 8034054357249306291}
   m_Layer: 5
   m_Name: CurrentLobby
   m_TagString: Untagged
@@ -573,6 +628,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41584bb75d0e2654fa5ab93e9b144d0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <CreateACurrentLobby>k__BackingField: {fileID: 0}
+  <MainMenu>k__BackingField: {fileID: 0}
+--- !u!114 &8034054357249306291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7636362278960443995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e5d2931ca5c40e08ecbec9f9dbb3f41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TextMeshPro>k__BackingField: {fileID: 0}
 --- !u!1001 &3690128318964240443
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -775,6 +845,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daa22b2dd8b14744fb04ba827f651e27, type: 3}
+--- !u!114 &415782081907017459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017816184806560391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a70722c0ed54db29143aec342952499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ButtonTemplate>k__BackingField: {fileID: 734594015793824003, guid: f30e6d9e0a457a346bd02974fde425de, type: 3}
+  <CurrentRoom>k__BackingField: {fileID: 0}
+  <ContentFromRoomList>k__BackingField: {fileID: 0}
 --- !u!1001 &5488501915134486427
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -887,6 +972,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Exit
       objectReference: {fileID: 0}
+    - target: {fileID: 8066770517609629688, guid: 1eae4e3617f46044284230464d2ac7a5, type: 3}
+      propertyPath: unityEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8066770517609629688, guid: 1eae4e3617f46044284230464d2ac7a5, type: 3}
+      propertyPath: unityEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: LeaveRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 8066770517609629688, guid: 1eae4e3617f46044284230464d2ac7a5, type: 3}
+      propertyPath: unityEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Core.Managers.NetworkManagers.RoomManagers.RoomManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8066770517609629688, guid: 1eae4e3617f46044284230464d2ac7a5, type: 3}
+      propertyPath: unityEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8066770517609629690, guid: 1eae4e3617f46044284230464d2ac7a5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -973,6 +1074,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eae4e3617f46044284230464d2ac7a5, type: 3}
+--- !u!114 &238626779473328303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017816184514947605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e5d2931ca5c40e08ecbec9f9dbb3f41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TextMeshPro>k__BackingField: {fileID: 0}
 --- !u!1001 &8411269469686991583
 PrefabInstance:
   m_ObjectHideFlags: 0
