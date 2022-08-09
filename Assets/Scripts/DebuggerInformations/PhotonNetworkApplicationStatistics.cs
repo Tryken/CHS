@@ -2,7 +2,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace Debug
+namespace DebuggerInformations
 {
     public class PhotonNetworkApplicationStatistics : MonoBehaviour
     {
