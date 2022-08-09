@@ -14,8 +14,10 @@ namespace Core.Managers.GameManagers
 
         private void Awake()
         {
+#if  UNITY_EDITOR
             AssetDatabase.DeleteAsset("Assets/_tmp");
-            AssetDatabase.CreateFolder("Assets", "_tmp");
+            AssetDatabase.CreateFolder("Assets", "_tmp");   
+#endif
         }
         
         public void SetState(GameManagerState state)
@@ -46,7 +48,9 @@ namespace Core.Managers.GameManagers
         public void Clear()
         {
             GameManagerAPI.Instance.Clear();
-            AssetDatabase.DeleteAsset("Assets/_tmp");
+#if UNITY_EDITOR
+            AssetDatabase.DeleteAsset("Assets/_tmp");       
+#endif
         }
 
         private void OnSetCloseState()
