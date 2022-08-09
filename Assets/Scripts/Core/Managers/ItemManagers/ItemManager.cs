@@ -11,26 +11,30 @@ namespace Core.Managers.ItemManagers
     public class ItemManager : SingletonMonoBehaviour<ItemManager>
     {
         public Dictionary<string, ItemSo> Items;
-        
+
         private void Start()
         {
-            AssetDatabase.CreateFolder("Assets/_tmp","Items");  
+#if UNITY_EDITOR
+            AssetDatabase.CreateFolder("Assets/_tmp", "Items");
+#endif
         }
-        
+
         public ItemSo CreateItemSo(string id)
         {
             var asset = ScriptableObject.CreateInstance<ItemSo>();
             asset.ID = id;
             Items.Add(id, asset);
+#if UNITY_EDITOR
             AssetDatabase.CreateAsset(asset, $"Assets/_tmp/Items/{id}.asset");
+#endif
             return GetItemSo(id);
         }
 
         public ItemSo GetItemSo(string id)
         {
-            return Items.ContainsKey(id) ?  Items[id] : null;
+            return Items.ContainsKey(id) ? Items[id] : null;
         }
-        
+
         public void Clear()
         {
             ItemManagerAPI.Instance.Clear();

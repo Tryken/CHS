@@ -1,7 +1,5 @@
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
-using Core.Managers.ItemManagers.ScriptableObjects;
 using Core.Managers.TranslationManagers.ScriptableObjects;
 using Core.Singletons;
 using UnityEditor;
@@ -16,7 +14,10 @@ namespace Core.Managers.TranslationManagers
         
         private void Start()
         {
+#if UNITY_EDITOR
             AssetDatabase.CreateFolder("Assets/_tmp","Languages");  
+#endif
+
         }
         
         public LanguageSo CreateLanguageSo(string id)
@@ -24,7 +25,10 @@ namespace Core.Managers.TranslationManagers
             var asset = ScriptableObject.CreateInstance<LanguageSo>();
             asset.ID = id;
             _languages.Add(id, asset);
-            AssetDatabase.CreateAsset(asset, $"Assets/_tmp/Languages/{id}.asset");
+
+#if UNITY_EDITOR
+            AssetDatabase.CreateAsset(asset, $"Assets/_tmp/Languages/{id}.asset"); 
+#endif
             return GetLanguageSo(id);
         }
         
